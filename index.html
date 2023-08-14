@@ -7,7 +7,10 @@
         Animated Charts
     </title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/column-chart.css">
     <link rel="stylesheet" href="styles/bar-chart.css">
+
+    <script src="scripts/column-chart.js" defer></script>
     <script src="scripts/bar-chart.js" defer></script>
 </head>
 <body>
@@ -15,11 +18,26 @@
         Animated Charts
     </h1>
 
-    <section class="chart-section">
-        <h2 class="chart-title">
-            Bar Chart
-        </h2>
-        <div id="barChart" class="chart"></div>
-    </section>
+    <main class="charts-container">
+
+        <section class="chart-section">
+            <h2 class="chart-title">
+                Column Chart
+            </h2>
+            <div class="individual-chart-container">
+                <div id="columnChart" class="chart"></div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2 class="chart-title">
+                Bar Chart
+            </h2>
+            <div class="individual-chart-container">
+                <div id="barChart" class="chart"></div>
+            </div>
+        </section>
+
+    </main>
 </body>
 </html>

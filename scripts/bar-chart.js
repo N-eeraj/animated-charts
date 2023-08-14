@@ -1,46 +1,32 @@
 const barChart = document.getElementById('barChart')
 
-const data = [
-    {
-        label: 'Column 1',
-        value: 100,
-    },
-    {
-        label: 'Column 2',
-        value: 431,
-    },
-    {
-        label: 'Column 3',
-        value: 140,
-    },
-    {
-        label: 'Column 4',
-        value: 540,
-    },
-]
+const barChartData = Array.from({ length: 15 }, (_, i) => {
+    return {
+        label: `Bar ${i + 1}`,
+        value: Math.round(Math.random() * 1000)
+    }
+})
 
-const max = Math.max(...data.map(({value}) => value))
+const barMax = Math.max(...barChartData.map(({value}) => value))
 
-data.forEach(({label, value}) => {
-    const column = document.createElement('div')
-    column.classList.add('column')
-    column.setAttribute('data-value', value)
+barChartData.forEach(({label, value}) => {
+    const bar = document.createElement('div')
+    bar.classList.add('bar')
 
+    const barLabel = document.createElement('span')
+    barLabel.classList.add('label')
+    barLabel.innerText = label
+    bar.appendChild(barLabel)
 
-    const columnValue = document.createElement('span')
-    columnValue.classList.add('value')
-    columnValue.innerText = value
-    column.appendChild(columnValue)
+    const barPlot = document.createElement('div')
+    barPlot.classList.add('bar-plot')
+    barPlot.style.width = `${Math.round(value * 90 / barMax)}%`
+    bar.appendChild(barPlot)
 
-    const columnBar = document.createElement('div')
-    columnBar.classList.add('column-bar')
-    columnBar.style.height = `${Math.round(value * 100 / max)}%`
-    column.appendChild(columnBar)
+    const barValue = document.createElement('span')
+    barValue.classList.add('value')
+    barValue.innerText = value
+    bar.appendChild(barValue)
 
-    const columnLabel = document.createElement('span')
-    columnLabel.classList.add('label')
-    columnLabel.innerText = label
-    column.appendChild(columnLabel)
-
-    barChart.appendChild(column)
+    barChart.appendChild(bar)
 })
