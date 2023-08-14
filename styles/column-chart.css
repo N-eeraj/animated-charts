@@ -26,9 +26,10 @@
     width: 100%;
     background-color: var(--bg);
     border: 1px solid var(--accent);
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
     transform-origin: bottom;
-    animation: column-chart-size 3s ease-in infinite;
+    animation: column-chart-size 3s ease-in-out infinite;
+    backdrop-filter: blur(7px);
 }
 
 #columnChart .column .label {
@@ -43,7 +44,7 @@
     40% {
         transform: scaleY(1);
     }
-    90% {
+    80% {
         transform: scaleY(1);
     }
     100% {

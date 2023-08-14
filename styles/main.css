@@ -2,6 +2,7 @@
     --dark: #012;
     --light: #DEF;
     --accent: #0CF;
+    --accent-green: #0FD;
     --bg: #0CF1;
     --bg-green: #0FD1;
 }
@@ -20,6 +21,16 @@ body {
     color: var(--light);
 }
 
+#bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701286110.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: bg-rotate 10s infinite alternate;
+}
+
 .main-title {
     display: flex;
     justify-content: center;
@@ -29,6 +40,11 @@ body {
     text-align: center;
     font-size: 2.4rem;
     letter-spacing: 1.2px;
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: 100%;
 }
 
 .chart-section {
@@ -44,15 +60,12 @@ body {
     font-weight: 500;
 }
 
-.charts-container {
-    display: grid;
-    grid-template-columns: 100%;
-}
-
 .individual-chart-container {
     height: 360px;
     padding: 20px;
     background-color: var(--bg-green);
+    border: 1px solid var(--light);
+    backdrop-filter: blur(3px);
 }
 
 .chart {
@@ -64,5 +77,14 @@ body {
     .charts-container {
         display: grid;
         grid-template-columns: 50% 50%;
+    }
+}
+
+@keyframes bg-rotate {
+    from {
+        filter: brightness(0.1) saturate(10) hue-rotate(300deg);
+    }
+    to {
+        filter: brightness(0.1) saturate(10) hue-rotate(400deg);
     }
 }
