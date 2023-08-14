@@ -1,0 +1,54 @@
+#barChart {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    column-gap: 10px;
+    height: 240px;
+    width: clamp(200px, 100%, 720px);
+    padding: 10px;
+    overflow-x: auto;
+}
+
+#barChart .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    row-gap: 5px;
+    flex-shrink: 0;
+    width: 50px;
+    height: 100%;
+}
+
+#barChart .column .value {
+    font-size: 0.7rem;
+}
+
+#barChart .column .column-bar {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transform-origin: bottom;
+    animation: bar-chart-size 3s ease-in infinite;
+}
+
+#barChart .column .label {
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+@keyframes bar-chart-size {
+    0% {
+        transform: scaleY(0);
+    }
+    40% {
+        background-color: var(--light);
+        transform: scaleY(1);
+    }
+    90% {
+        background-color: var(--light);
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
