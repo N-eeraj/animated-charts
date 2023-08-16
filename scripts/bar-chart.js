@@ -9,7 +9,7 @@ const barChartData = Array.from({ length: 15 }, (_, i) => {
 
 const barMax = Math.max(...barChartData.map(({value}) => value))
 
-barChartData.forEach(({label, value}) => {
+barChartData.forEach(({ label, value }) => {
     const bar = document.createElement('div')
     bar.classList.add('bar')
 

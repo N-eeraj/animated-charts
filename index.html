@@ -6,12 +6,15 @@
     <title>
         Animated Charts
     </title>
+
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/column-chart.css">
     <link rel="stylesheet" href="styles/bar-chart.css">
+    <link rel="stylesheet" href="styles/doughnut-chart.css">
 
     <script src="scripts/column-chart.js" defer></script>
     <script src="scripts/bar-chart.js" defer></script>
+    <script src="scripts/doughnut-chart.js" defer></script>
 </head>
 <body>
     <div id="bg"></div>
@@ -37,6 +40,31 @@
             </h2>
             <div class="individual-chart-container">
                 <div id="barChart" class="chart"></div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2 class="chart-title">
+                Doughnut Chart
+            </h2>
+            <div class="individual-chart-container">
+                <div class="doughnut-chart">
+                    <span class="value"></span>
+                    <svg id="doughnutChart" class="chart">
+                        <circle
+                            r="20%"
+                            cy="50%"
+                            cx="50%"
+                            fill="none"
+                            class="background" />
+                        <circle
+                            r="20%"
+                            cy="50%"
+                            cx="50%"
+                            fill="none"
+                            class="doughnut" />
+                    </svg>
+                </div>
             </div>
         </section>
 

@@ -1,0 +1,38 @@
+.doughnut-chart {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.doughnut-chart .value {
+    position: absolute;
+    font-size: 1.8rem;
+}
+
+#doughnutChart.chart {
+    width: 100%;
+}
+
+#doughnutChart.chart circle {
+    width: 50%;
+    stroke-width: 10%;
+}
+
+#doughnutChart.chart circle.background {
+    stroke: var(--bg-green);
+    backdrop-filter: blur(10px);
+    stroke-dasharray: none;
+}
+
+#doughnutChart.chart circle.doughnut {
+    stroke: var(--accent);
+    stroke-dasharray: 220%;
+    animation: doughnut 2s infinite cubic-bezier(.19,1,.22,1) alternate;
+}
+
+@keyframes doughnut {
+    0% {
+        stroke-dashoffset: 220%;
+    }
+}

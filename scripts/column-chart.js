@@ -9,7 +9,7 @@ const columnChartData = Array.from({ length: 15 }, (_, i) => {
 
 const columnChartMax = Math.max(...columnChartData.map(({value}) => value))
 
-columnChartData.forEach(({label, value}) => {
+columnChartData.forEach(({ label, value }) => {
     const column = document.createElement('div')
     column.classList.add('column')
 
